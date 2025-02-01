@@ -24,6 +24,7 @@ public class Person {
         this.LastName = lastName;
         this.Title = title;
         this.YOB = yob;
+
     }
     //Getters
     //Get ID
