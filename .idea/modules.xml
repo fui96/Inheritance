@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Inheritance.iml" filepath="$PROJECT_DIR$/Inheritance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SalaryWorker/SalaryWorker.iml" filepath="$PROJECT_DIR$/SalaryWorker/SalaryWorker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Worker/Worker.iml" filepath="$PROJECT_DIR$/Worker/Worker.iml" />
+    </modules>
+  </component>
+</project>
