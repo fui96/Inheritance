@@ -44,7 +44,7 @@ public class Worker extends Person {
         double PayTotal = 0;
         if (HoursWorked > 40){
             double OverTimeHours = HoursWorked - 40;
-            PayTotal += HoursWorked * HourlyPayRate;
+            PayTotal += (HoursWorked - OverTimeHours) * HourlyPayRate;
             PayTotal += OverTimeHours * (HourlyPayRate * 1.5);
             return PayTotal;
         }
@@ -74,12 +74,19 @@ public class Worker extends Person {
     }
 
     public String toCSV(){
-
+        return super.toCSV() + "," + HourlyPayRate;
     }
-    public String toJSON() {
+    public String toJson() {
+        String Replacement = String.format(",\"Hourly Wage\" : \"%s\"}", HourlyPayRate);
 
+        return super.toJson().replace("\"}",Replacement);
     }
     public String toXML(){
+        return  "<Worker>" +
+                super.toXML().replace("<Person>","") .replace("</Person>","")
+                +"<HourlyPayRate>" + HourlyPayRate + "</HourlyPayRate>"
+                + "</Worker>";
+
 
     }
 }
