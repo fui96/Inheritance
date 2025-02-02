@@ -61,15 +61,15 @@ public class Worker extends Person {
         double OTHours = 0;
         if (HoursWorked > 40){
             OTHours = HoursWorked - 40;
-            OTPay += HoursWorked * (HourlyPayRate * 1.5);
-            RegPay += (HoursWorked - OTHours) * HourlyPayRate;
-            PayTotal += RegPay + OTPay;
-            System.out.printf("%5s,%5s,%5s",RegPay,OTPay,PayTotal);
+            OTPay = HoursWorked * (HourlyPayRate * 1.5);
+            RegPay = (HoursWorked - OTHours) * HourlyPayRate;
+            PayTotal = RegPay + OTPay;
+            System.out.printf("%15.2f,|%15.2f,|%15.2f\n",RegPay,OTPay,PayTotal);
         }
         else{
-            RegPay += HoursWorked * HourlyPayRate;
-            PayTotal += OTPay + RegPay;
-            System.out.printf("%5s,%5s,%5s",RegPay,OTPay,PayTotal);
+            RegPay = HoursWorked * HourlyPayRate;
+            PayTotal = OTPay + RegPay;
+            System.out.printf("%15.2f |%15.2f |%15.2f\n",RegPay,OTPay,PayTotal);
         }
     }
 

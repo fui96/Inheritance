@@ -52,6 +52,22 @@ public class SalaryWorker extends Worker {
      */
     public void DisplayWeeklyPay(double HoursWorked){
         double weeklyPay = calculateWeeklyPay(HoursWorked);
-        System.out.printf("%6s,%6s",weeklyPay,annualSalary);
+        double OTpay = 0;
+        double TotalPay = weeklyPay + OTpay;
+        System.out.printf("%15.2f |%15s |%15s\n",weeklyPay,OTpay,annualSalary);
     }
+
+    //Exports
+    /*
+    public String toCSV(){
+
+    }
+    public String toJson(){
+
+    }
+    public String toXML(){
+
+    }
+     */
+
 }
