@@ -28,11 +28,10 @@ public class InheritanceDemo {
         }while (mainCont);
         int weeks = 0;
         int[] Hours = {40,50,40};
-
         do{
             //Salary Worker Summary
-            System.out.printf("%16s %16s %16s\n", "Weekly Pay", "OT Pay", "Salary");
-            System.out.println("-".repeat(60));
+            System.out.printf("%12s %15s %12s %12s %12s\n", "Hours Worked","Weekly Pay","Overtime Hours" ,"OT Pay", "Salary");
+            System.out.println("-".repeat(70));
             for(Worker w : Workers){
                 if(w instanceof SalaryWorker){
                 System.out.println(w.getFirstName());
@@ -41,8 +40,8 @@ public class InheritanceDemo {
             }
             System.out.println();
         //Hourly Worker Summary
-            System.out.printf("%16s %16s %16s\n", "Weekly Pay", "OT Pay", "Total Pay");
-            System.out.println("-".repeat(60));
+            System.out.printf("%12s %15s %12s %12s %12s\n", "Hours Worked", "Weekly Pay","Overtime Hours", "OT Pay", "Total Pay");
+            System.out.println("-".repeat(70));
             for(Worker w : Workers){
                 if(!(w instanceof SalaryWorker)){
                 System.out.println(w.getFirstName());

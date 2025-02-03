@@ -5,7 +5,7 @@ public class Worker extends Person {
     //Constructor
 
     /**
-     *
+     * Initializes a Worker object
      * @param ID Worker's ID Number
      * @param FirstName Worker's First Name
      * @param LastName Worker's Last Name
@@ -54,6 +54,10 @@ public class Worker extends Person {
         }
     }
 
+    /**
+     * displays weekly pay given hours worked
+     * @param HoursWorked How many hours were worked
+     */
     public void DisplayWeeklyPay(double HoursWorked){
         double OTPay = 0;
         double PayTotal = 0;
@@ -64,23 +68,36 @@ public class Worker extends Person {
             OTPay = HoursWorked * (HourlyPayRate * 1.5);
             RegPay = (HoursWorked - OTHours) * HourlyPayRate;
             PayTotal = RegPay + OTPay;
-            System.out.printf("%15.2f,|%15.2f,|%15.2f\n",RegPay,OTPay,PayTotal);
+            System.out.printf("%12.2f |%12.2f |%12.2f,|%12.2f,|%12.2f\n",HoursWorked,RegPay,OTHours,OTPay,PayTotal);
         }
         else{
             RegPay = HoursWorked * HourlyPayRate;
             PayTotal = OTPay + RegPay;
-            System.out.printf("%15.2f |%15.2f |%15.2f\n",RegPay,OTPay,PayTotal);
+            System.out.printf("%12.2f |%12.2f |%12.2f,|%12.2f,|%12.2f\n",HoursWorked,RegPay,OTHours,OTPay,PayTotal);
         }
     }
 
+    /**
+     * Returns Salary Worker info as a string for csv
+     * @return CSV formatted string
+     */
     public String toCSV(){
         return super.toCSV() + "," + HourlyPayRate;
     }
+
+    /**
+     * Returns Salary Worker info as a string for Json
+     * @return JSON formatted string
+     */
     public String toJson() {
         String Replacement = String.format(",\"Hourly Wage\" : \"%s\"}", HourlyPayRate);
-
         return super.toJson().replace("\"}",Replacement);
     }
+
+    /**
+     * Returns Salary Worker info as a string for XML
+     * @return XML formatted string
+     */
     public String toXML(){
         return  "<Worker>" +
                 super.toXML().replace("<Person>","") .replace("</Person>","")
